@@ -25,6 +25,38 @@ class TestController extends Controller
 
     }
 
+    public function test3()
+    {
+        $date = date('Y-m-d H:i:s',time());
+
+        // $time = time();
+        $time = strtotime('+1 year');
+        // return view('home.test.test3',['date'=>$date]);
+
+        return view('home/test/test3',compact('date','time'));
+    }
+
+    public function test4()
+    {
+        $data = DB::table('member')->get();
+
+        return view('home/test/test4',compact('data'));
+
+    }
+
+    public function test6()
+    {
+        $data = DB::table('member')->get();
+
+        return view('home/test/test6',compact('data'));
+
+    }
+
+    public function test7()
+    {
+        return '请求提交成功';
+    }
+
     public function add()
     {
         $db = DB::table('member');
