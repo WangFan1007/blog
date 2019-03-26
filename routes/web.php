@@ -43,3 +43,5 @@ Route::any('/home/test/test13', 'TestController@test13');
 
 Route::any('/home/test/test14', 'TestController@test14');
 
+Route::get('/home/test/test15', 'TestController@test15');
+

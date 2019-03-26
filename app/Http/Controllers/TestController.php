@@ -150,6 +150,13 @@ class TestController extends Controller
         }
     }
 
+    public function test15()
+    {
+        // $data = Member::get();
+        $data = Member::paginate(1);
+        return view('home.test.test15', compact('data'));
+    }
+
     public function add()
     {
         $db = DB::table('member');
