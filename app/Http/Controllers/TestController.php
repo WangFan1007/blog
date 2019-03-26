@@ -125,7 +125,8 @@ class TestController extends Controller
             $this->validate($request,[
                 'm_name'=>'required|min:2|max:20',
                 'age'=>'required|integer|min:1|max:150',
-                'email'=>'required|email'
+                'email'=>'required|email',
+                'captcha'=>'required|captcha'
             ]);
         }else {
             return view('home/test/test13');

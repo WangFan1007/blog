@@ -47,6 +47,12 @@
             <input type="text" class="form-control" id="emial" placeholder="Email" name='email'>
         </div>
         {{ csrf_field() }}
+
+        <div class="form-group">
+            <label for="captcha">验证码</label>
+            <input type="text" class="form-control" id="captcha" placeholder="" name='captcha'>
+        <img src="{{captcha_src()}}" alt="" srcset="">
+        </div>
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
 </body>
