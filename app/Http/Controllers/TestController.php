@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Input;
 use DB;
 
+use App\Home\Member;
+
 class TestController extends Controller
 {
     public function test1()
@@ -56,6 +58,67 @@ class TestController extends Controller
     {
         return '请求提交成功';
     }
+
+
+    public function test8(Request $request)
+    {
+        //AR 模型添加操作
+        $model = new Member();
+        // $res = $model->get();
+        // dump($res);
+
+        // $model->m_name = 'dust';
+        // $model->age = '29';
+        // $model->email = '1036815077@qq.com';
+        // $res = $model->save();
+        // dump($res);
+
+        $res = $model->create($request->all());
+        dump($res);
+
+    }
+    public function test9()
+    {
+        //查询操作
+        // $res = Member::find(6);
+        // dump($res);
+
+        $res = Member::where('id','>','4')->get();
+        // $res = Member::where('id','>','4')->first();
+        // $res = Member::all();
+        // dump($res);
+        dump($res->toArray());
+    }
+    public function test10()
+    {
+        //AR 模式修改操作
+        // $data = Member::find('2');
+        // $data->email = 'lisalisa2@163.com';
+        // $data->save();
+        // dump($data->toArray());
+
+        $res = Member::where('id','=',3)->update(['m_name'=>'王小五']);
+        dump($res);
+    }
+    public function test11()
+    {
+        //AR 模式删除操作
+        $data = Member::find(5);
+        if ($data) {
+            $res = $data->delete();
+            dump($res);
+        }
+        dump($data);
+       
+        
+    }
+
+    public function test12()
+    {
+        return view('home.test.test12');
+    }
+
+
 
     public function add()
     {

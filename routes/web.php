@@ -31,3 +31,10 @@ Route::get('/home/test/test4', 'TestController@test4');
 
 Route::get('/home/test/test6', 'TestController@test6');
 Route::post('/home/test/test7', 'TestController@test7')->name('test7');
+
+Route::any('/home/test/test8', 'TestController@test8')->name('test8');
+Route::get('/home/test/test9', 'TestController@test9');
+Route::get('/home/test/test10', 'TestController@test10');
+Route::get('/home/test/test11', 'TestController@test11');
+
+Route::get('/home/test/test12', 'TestController@test12');
