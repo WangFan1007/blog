@@ -38,3 +38,6 @@ Route::get('/home/test/test10', 'TestController@test10');
 Route::get('/home/test/test11', 'TestController@test11');
 
 Route::get('/home/test/test12', 'TestController@test12');
+
+Route::any('/home/test/test13', 'TestController@test13');
+

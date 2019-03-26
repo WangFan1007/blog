@@ -118,6 +118,19 @@ class TestController extends Controller
         return view('home.test.test12');
     }
 
+    public function test13(Request $request)
+    {
+        $method = Input::method();
+        if ($method == 'POST') {
+            $this->validate($request,[
+                'm_name'=>'required|min:2|max:20',
+                'age'=>'required|integer|min:1|max:150',
+                'email'=>'required|email'
+            ]);
+        }else {
+            return view('home/test/test13');
+        }
+    }
 
 
     public function add()
