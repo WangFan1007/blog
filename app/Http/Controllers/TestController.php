@@ -132,6 +132,23 @@ class TestController extends Controller
         }
     }
 
+    public function test14(Request $request)
+    {
+        if (Input::method() == 'POST') {
+            // dump($request);
+            if ($request->hasFile('avatar') and $request->file('avatar')->isValid()) {
+                
+                $path = md5(time() . rand(100000,999999)) .'.'. $request->file('avatar')->getClientOriginalExtension();
+                $request->file('avatar')->move('./uploads',$path);
+                // dump($request->file('avatar')->getClientOriginalExtension());
+                $data = $request->all();
+                $data['avatar'] = './uploads/' . $path;
+                Member::create($data); 
+            }
+        }else {
+            return view('home.test.test14');
+        }
+    }
 
     public function add()
     {
