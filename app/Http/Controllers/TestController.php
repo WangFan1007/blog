@@ -158,6 +158,17 @@ class TestController extends Controller
         return view('home.test.test15', compact('data'));
     }
 
+    public function test16()
+    {
+        return view('home.test.test16');
+    }
+    public function test17()
+    {
+        $data = Member::get();
+        
+        return response()->json($data);
+    }
+
     public function add()
     {
         $db = DB::table('member');
