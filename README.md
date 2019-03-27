@@ -23,5 +23,16 @@
 2. `php artisan db:seed --class=PaperTableSeeder` 
 
 
+### 联表查询
+0. 准备
+<br>`php artisan make:migration create_article_table`
+<br>`php artisan make:migration create_author_table`
+<br> 编写迁移文件
+<br>`php artisan migrate`
+<br>`php artisan make:seeder ArticleAndAuthorTableSeeder`
+<br>`php artisan db:seed --class=ArticleAndAuthorTableSeeder`
+
+1. 写原始`sql` 语句
+<br>`select t1.id, t1.article_name, t2.author_name from article as t1 left join author as t2 on t1.author_id = t2.id`
 
 

@@ -176,6 +176,13 @@ class TestController extends Controller
         dump(Session::get('name'));
     }
 
+    public function test20()
+    {
+        $data = DB::table('article as t1')->select('t1.id','t1.article_name','t2.author_name')
+        ->leftJoin('author as t2','t1.author_id','=','t2.id')->get();
+        dump($data);
+    }
+
     public function add()
     {
         $db = DB::table('member');
