@@ -51,3 +51,5 @@ Route::get('/home/test/test17', 'TestController@test17');
 Route::get('/home/test/test18', 'TestController@test18');
 Route::get('/home/test/test20', 'TestController@test20');
 
+Route::get('/home/test/test21', 'TestController@test21');
+

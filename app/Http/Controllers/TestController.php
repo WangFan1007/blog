@@ -8,6 +8,8 @@ use DB;
 use Session;
 
 use App\Home\Member;
+use App\Home\Author;
+use App\Home\Article;
 
 class TestController extends Controller
 {
@@ -181,6 +183,14 @@ class TestController extends Controller
         $data = DB::table('article as t1')->select('t1.id','t1.article_name','t2.author_name')
         ->leftJoin('author as t2','t1.author_id','=','t2.id')->get();
         dump($data);
+    }
+
+    public function test21()
+    {
+        $data = Article::get();
+        foreach ($data as $key => $value) {
+            echo $value->id . $value->article_name . $value->author->author_name . '<br>';
+        }
     }
 
     public function add()

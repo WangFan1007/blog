@@ -30,9 +30,14 @@
 <br> 编写迁移文件
 <br>`php artisan migrate`
 <br>`php artisan make:seeder ArticleAndAuthorTableSeeder`
-<br>`php artisan db:seed --class=ArticleAndAuthorTableSeeder`
+<br>`php artisan db:seed --class=ArticleAndAuthorTableSeeder` 如果报错找不到类执行`composer dump-autoload` 后再运行
 
 1. 写原始`sql` 语句
 <br>`select t1.id, t1.article_name, t2.author_name from article as t1 left join author as t2 on t1.author_id = t2.id`
+
+### 关联模型
+1. 创建模型
+<br>`php artisan make:model Home/Article`
+<br>`php artisan make:model Home/Author`
 
 
