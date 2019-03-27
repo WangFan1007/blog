@@ -1,5 +1,9 @@
 # laravel 练习项目
 
+## 项目初始化
+### 基本配置
+1. 时区 config/app.php timezone Aisa/changhai Aisa/chongqing PRC
+
 ## laravel 环境 
 1. `clone`项目后执行`composer i`;
 2. [packagist](https://packagist.org/),可以到该网站查找三方包
@@ -17,3 +21,7 @@
 ### 填充器（种子文件）创建与编写，`seeds`目录下
 1. `php artisan make:seeder PaperTableSeeder` 然后去该文件编写`run`方法添加模拟数据
 2. `php artisan db:seed --class=PaperTableSeeder` 
+
+
+
+
