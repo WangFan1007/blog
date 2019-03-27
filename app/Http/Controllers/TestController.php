@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Input;
 use DB;
+use Session;
 
 use App\Home\Member;
 
@@ -167,6 +168,12 @@ class TestController extends Controller
         $data = Member::get();
         
         return response()->json($data);
+    }
+
+    public function test18()
+    {
+        // Session::put('name','jojo');
+        dump(Session::get('name'));
     }
 
     public function add()
