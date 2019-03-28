@@ -207,7 +207,8 @@ class TestController extends Controller
 
     public function test23()
     {
-        
+        $data = Article::get();
+        return view('home.test.test23',compact('data'));
     }
 
     public function add()
