@@ -189,7 +189,13 @@ class TestController extends Controller
     {
         $data = Article::get();
         foreach ($data as $key => $value) {
-            echo $value->id . $value->article_name . $value->author->author_name . '<br>';
+            
+            try {
+                $author_name =  $value->author->author_name;
+            } catch (\Throwable $th) {
+                $author_name = null;
+            }
+            echo $value->id . $value->article_name . $author_name . '<br>';
         }
     }
 
