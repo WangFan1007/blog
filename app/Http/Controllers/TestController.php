@@ -199,6 +199,17 @@ class TestController extends Controller
         }
     }
 
+    public function test22()
+    {
+        $data = Article::get();
+        return view('home.test.test22',compact('data'));
+    }
+
+    public function test23()
+    {
+        
+    }
+
     public function add()
     {
         $db = DB::table('member');

@@ -14,4 +14,9 @@ class Article extends Model
     {
         return $this->hasOne('App\Home\Author', 'id', 'author_id');
     }
+
+    public function comments()
+    {
+        return $this->hasMany('App\Home\Comment','article_id','id');
+    }
 }

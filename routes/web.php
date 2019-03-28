@@ -53,3 +53,6 @@ Route::get('/home/test/test20', 'TestController@test20');
 
 Route::get('/home/test/test21', 'TestController@test21');
 
+Route::get('/home/test/test22', 'TestController@test22');
+Route::get('/home/test/test23', 'TestController@test23');
+
